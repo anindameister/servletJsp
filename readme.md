@@ -55,8 +55,77 @@ public void method(){
     }
 }
 ```
+- the actual
 
+```
+try
+{ 
+	obj.Casio((int)req.getAttribute("k"));
+} 
+
+catch(Exception e) 
+{ 
+	try {
+		obj.Casio(Integer.parseInt(req.getParameter("l")));
+		
+	}catch(Exception ee){
+		obj.Casio((int)session.getAttribute("m"));
+      
+    }
+	
+	
+	
+} 
+```
+- the multiply
+```
+package demoApp;
+
+import java.io.IOException;
+
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+public class ServletMultiply extends HttpServlet{
+	
+	public void service(HttpServletRequest req, HttpServletResponse res) throws IOException {
+		int i=Integer.parseInt(req.getParameter("num1"));
+		int j=Integer.parseInt(req.getParameter("num2"));;
+		
+		int n=i*j;
+
+
+		res.getWriter().println("result is "+n);
+		
+		HttpSession session= req.getSession();
+		session.setAttribute("n", n);
+		
+		res.sendRedirect("palindrome");
+		
+
+	}
+}
+```
 #### Deploy Java Web Application in AWS Elastic Beanstalk | AWS Tutorial for Beginners | Edureka [[14]](#14).
+
+- nothing happened till now.
+- seems that it requires Maven Project
+
+# ServletConfig and ServletContext
+
+- ServletContext for all servlets, same thing eg:name
+- ServletConfig specific to servlets
+- this ServletConfig is specific to servlets and hence it's declared inside the servlet tag asssociated to the particular servelet
+
+
+# jsp
+- in html we dont get errors
+- declaration
+- Directive
+- Scriplet
+- Expression
 
 
 

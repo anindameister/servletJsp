@@ -18,6 +18,8 @@ public class ServletMultiply extends HttpServlet{
 
 		res.getWriter().println("result is "+n);
 		
+		
+		
 		HttpSession session= req.getSession();
 		session.setAttribute("n", n);
 		

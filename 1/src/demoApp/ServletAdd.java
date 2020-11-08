@@ -3,6 +3,7 @@ package demoApp;
 import java.io.IOException;
 
 import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -30,9 +31,11 @@ public class ServletAdd extends HttpServlet{
 		RequestDispatcher rd=req.getRequestDispatcher("armstrong");
 		rd.forward(req, res);
 		
+		
+		
 
 
 	}
-
+		
 	
 }

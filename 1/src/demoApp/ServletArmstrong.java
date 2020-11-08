@@ -3,6 +3,8 @@ package demoApp;
 import java.io.IOException;
 import java.util.ArrayList;
 
+import javax.servlet.ServletConfig;
+import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -74,8 +76,7 @@ public class ServletArmstrong extends HttpServlet{
 		
 		
 Casio obj=new Casio();
-Casio obj1=new Casio();
-Casio obj2=new Casio();
+
 
 
 //
@@ -89,7 +90,15 @@ HttpSession session=req.getSession();
 	    	
 try
 { 
+//	res.getWriter().println("<html><body bgcolor='cyan'>");
 	obj.Casio((int)req.getAttribute("k"));
+	ServletContext sc=getServletContext();
+	String invitationType=sc.getInitParameter("invitationType");
+	String name=sc.getInitParameter("name");
+	String location=sc.getInitParameter("location");
+	String prepositionType=sc.getInitParameter("prepositionType");
+	res.getWriter().println(invitationType+" "+prepositionType+" "+name+" "+location);
+//	res.getWriter().println("</body></html>");
 } 
 
 catch(Exception e) 
@@ -97,10 +106,27 @@ catch(Exception e)
 	try {
 		obj.Casio(Integer.parseInt(req.getParameter("l")));
 		
+		ServletContext sc=getServletContext();
+		String name=sc.getInitParameter("name");
+		
+		ServletConfig sc2=getServletConfig();
+		String name2=sc2.getInitParameter("name");
+		res.getWriter().println(name+"is loved by"+name2);
+		
+		
 	}catch(Exception ee){
 		obj.Casio((int)session.getAttribute("m"));
+		ServletContext sc=getServletContext();
+		String name=sc.getInitParameter("name");
+		res.getWriter().println("I love you "+name);
+		
       
     }
+	
+	
+	
+} 
+
 	
 	
 	
@@ -218,6 +244,5 @@ catch(Exception e)
 //			
 //		}
 
-}
-	
+
 }

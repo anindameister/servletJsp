@@ -57,6 +57,13 @@
   <servlet-name>abc5</servlet-name>
   <servlet-class>demoApp.ServletArmstrong</servlet-class>
   
+    <init-param>
+  <param-name>name
+  </param-name>
+  <param-value>Many people 
+  </param-value>
+  </init-param>
+  
   </servlet>
   <servlet-mapping>
     <servlet-name>abc5</servlet-name>
@@ -94,6 +101,13 @@
   <url-pattern>/palindromeString</url-pattern>
   </servlet-mapping>
   
+
   
+  <context-param><param-name>name</param-name><param-value>Aninda</param-value></context-param>
+   <context-param><param-name>location</param-name><param-value>PalaceOfLove</param-value></context-param> 
+     <context-param><param-name>invitationType</param-name><param-value>Welcome</param-value></context-param>
+     <context-param><param-name>prepositionType</param-name><param-value>To</param-value></context-param>
+  
+
   
 </web-app>
